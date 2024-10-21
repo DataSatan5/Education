@@ -19,10 +19,10 @@ def find_max_subarray_sum(numbers: list) -> int:
         curr_sum (int): Текущая сумма подмассива, которая обновляется при итерации.
     """
     num_len = len(numbers)
-    max_sum = 0
+    max_sum = 1e-8
     curr_sum = 0
 
-    for _ in range(1, num_len):
+    for _ in range(num_len):
         curr_sum += numbers[_]
         if (curr_sum > max_sum):
             max_sum = curr_sum
@@ -32,5 +32,6 @@ def find_max_subarray_sum(numbers: list) -> int:
     return max_sum
 
 # Тест
-nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+#nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+nums = [-999, -100, -33, -1, 10, 200, -5, -48]
 print(find_max_subarray_sum(nums))  # 6 (подмассив [4,−1,2,1])
