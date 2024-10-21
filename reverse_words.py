@@ -13,9 +13,8 @@ def reverse_words(my_str: str) -> str:
     Returns:
         new_str (str): развернутая строка.
     '''
-    new = ' '.join(my_str.split()[::-1])
 
-    return new
+    return ' '.join(my_str.split()[::-1])
 
 
 # Тест
