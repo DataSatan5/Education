@@ -4,29 +4,19 @@
 где ключами являются символы,а значениями — их частота в строке.
 '''
 
+from collections import Counter
 
 def char_frequency(s: str) -> dict:
-
     """
     Args:
         s (str): строка, поданная на вход.
 
     Returns:
-        freq_dict (dict): словарь,ключи - символы, значениями — их частота в строке s.
+        dict: словарь,ключи - символы, значениями — их частота в строке s.
     """
-
-    freq_dict = {}
-
-    for char in s:
-        if char in freq_dict:
-            freq_dict[char] += 1
-        else:
-            freq_dict[char] = 1
-
-    return freq_dict
-
+    return dict(Counter(s))
 
 # Тест
-string = "abracadabra"
+string = "hello world"
 result = char_frequency(string)
 print(result)
