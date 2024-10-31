@@ -3,8 +3,9 @@
 Напишите функцию, которая принимает список чисел и возвращает максимальную сумму подмассива.
 Реализация через алгоритм Кадане.
 '''
+import timeit
 
-def max_subarray_sum(nums: list) -> int:
+def max_subarray_sum_kadane(nums: list) -> int:
     """
     Находит максимальную сумму подмассива в заданном массиве чисел.
 
@@ -28,4 +29,7 @@ def max_subarray_sum(nums: list) -> int:
 
 # Тестируем
 my_nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
-print(max_subarray_sum(my_nums))  # 6 (подмассив [4, -1, 2, 1])
+print(max_subarray_sum_kadane(my_nums))  # 6 (подмассив [4, -1, 2, 1])
+
+time = timeit.timeit(lambda: max_subarray_sum_kadane(my_nums), number=1000000)
+print(f"Время выполнения через алгоритм Кадане = {round(time, 3)}.")
